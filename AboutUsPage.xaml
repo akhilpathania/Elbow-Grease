@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="Elbow_Grease.AboutUsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Elbow_Grease"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+
+        <ScrollViewer>
+            <ScrollViewer Width="1280" Height="2500"  Margin="0,0,0,-1796">
+
+                <Grid Height="3599">
+
+
+                    <Grid.Background>
+                        <SolidColorBrush Color="White"/>
+                    </Grid.Background>
+                    <Button Name="back" Click="back_Click" Content="←│←BACK" Background="BlueViolet" FontSize="40" Height="77" Margin="0,-800,0,2669" Width="254"/>
+                    <Image Source="Assets\Windows10.jpg" Margin="0,-930,0,1872"/>
+                    <Image Width="500" Height="700" Margin="0 -1500 0 0" Source="Assets\Mypic.jpg" />
+                    <TextBlock Text="Akhil Pathania" Margin="390,1400,384,1968" Foreground="Red"  FontSize="80"/>
+                    <TextBlock Text="Contact:" Margin="100,1480,384,1890" Foreground="Red"  FontSize="80"/>
+                    <TextBlock Text="8284010374" Margin="300,1630,444,1770" Foreground="Red"  FontSize="80"/>
+                    
+
+
+
+                </Grid>
+            </ScrollViewer>
+        </ScrollViewer>
+    </Grid>
+    
+</Page>

@@ -1,0 +1,84 @@
+﻿<Page
+    x:Class="Elbow_Grease.WorkOutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Elbow_Grease"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="904">
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="WideState">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="1000" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+
+
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="NarrowState">
+                <VisualState.StateTriggers>
+                    <AdaptiveTrigger MinWindowWidth="0" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+
+                    <Setter Target="bt.(Grid.ColumnSpan)" Value="2"/>
+                    <Setter Target="back.(Grid.Column)" Value="1"/>
+
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+
+
+
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollMode="Auto" Margin="0,0,0,304">
+        <Grid Height="887">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="271*"/>
+                <RowDefinition Height="309*"/>
+                <RowDefinition Height="307*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Assets\Paris-eiffel-tower-blurred.jpg"/>
+            </Grid.Background>
+
+            <TextBlock Margin="15,0,5,70" TextAlignment="Center" FontSize="55" Foreground="Green"  TextWrapping="Wrap" Text="Some Calculated Stuff Of Your Body" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Name="bmistack" BorderThickness="4" BorderBrush="Blue" Margin="35,0,28,304" Grid.RowSpan="2">
+                <TextBlock Margin="0,0,0,0" TextWrapping="Wrap" Text="BMI (Body Mass Index)" TextAlignment="Center" FontSize="20" Height="62" RenderTransformOrigin="0.5,0.5"/>
+
+                <TextBlock TextWrapping="Wrap" Name="ak" FontSize="20" Text="" Margin="26,0,28,0" Height="240" />
+
+
+            </StackPanel>
+
+            <StackPanel Name="bmrstack" BorderThickness="4" BorderBrush="DeepPink" Grid.Column="1" Grid.Row="1" Margin="36,0,36,298" Grid.RowSpan="2">
+                <TextBlock TextWrapping="Wrap"  FontSize="20" TextAlignment="Center" Margin="6,0" Height="61" >
+                	<Run Text="BMR (Basal Metabolic Rate) Of Your Body "/>
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" Name="bk" FontSize="20" Text="" Margin="26,0,28,0" Height="240" />
+
+
+            </StackPanel>
+
+            <RelativePanel Name="bt" >
+                <Button x:Name="next" Click="next_Click" Content="Next Page" Background="LightGreen" BorderBrush="Yellow" BorderThickness="5" HorizontalAlignment="Left" Margin="36,201,0,0" VerticalAlignment="Top" Width="213" Height="60" Grid.Column="1"/>
+            </RelativePanel>
+            <Button x:Name="back" Click="back_Click" Grid.Column="1" Content="LOGOUT" Background="LightGreen" BorderBrush="Yellow" BorderThickness="5" HorizontalAlignment="Left" Margin="0,201,0,0" VerticalAlignment="Top" Width="213" Height="60"/>
+
+            <HyperlinkButton NavigateUri="http://www.calculator.net/weight-loss-calculator.html" Name="calc"  Grid.Column="0" Grid.Row="2" Content="More Calculators" Background="LightGreen" BorderBrush="Yellow" BorderThickness="5" Height="85" Margin="33,82,0,140" Width="207"/>
+            <HyperlinkButton NavigateUri="https://authoritynutrition.com/how-to-lose-weight-as-fast-as-possible/" Name="lose"  Grid.Column="1" Grid.Row="2" Content="Food To Lose Weight" Background="LightGreen" BorderBrush="Yellow" BorderThickness="5" Height="85" Margin="11,55,0,151" Width="225"/>
+            <HyperlinkButton NavigateUri="http://www.thefitindian.com/5-minute-fat-burning-workouts-at-home-best-exercises-to-lose-weight/" Name="ex" Grid.Column="1" Grid.Row="2" Content="Excercise To Lose Weight" Background="LightGreen" BorderBrush="Yellow" BorderThickness="5" Height="79" Margin="11,175,0,53" Width="225"/>
+
+        </Grid>
+    </ScrollViewer>
+</Page>
